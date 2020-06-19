@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1>{{ register.transactions.length }} transactions</h1>
+			<table class="table table-striped">
+				<thead>
+					<th>Date</th>
+					<th>Description</th>
+					<th>Account</th>
+					<th>Debit</th>
+					<th>Credit</th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let t of register.transactions" app-transaction [transaction] = "t">
+					</tr>
+					<tr>
+						<td>
+							<input type="date" id="date">
+						</td>
+						<td>
+							<input type="text" id="description">
+						</td>
+						<td>
+							<input type="text" id="account"> 	
+						</td>
+						<td colspan="2">
+							<input type="number" id="credit">
+						</td>
+						<td>
+							<input type="submit" id="submit" value="+" (click)="newTrans();">
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							{{ register.balance() }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button class="btn btn-primary" (click)="sort();">Sort (Date)</button>
+		</div>
+	</div>
+</div>

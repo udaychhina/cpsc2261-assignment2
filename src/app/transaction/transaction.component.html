@@ -1,0 +1,9 @@
+<ng-container>
+	<td>{{ transaction.date }}</td>
+	<td>{{ transaction.description }}</td>
+	<td>{{ transaction.account }}</td>
+	<td *ngIf='transaction.credit < 0; else noShow' class="debit">{{ transaction.credit * -1 }}</td>
+	<ng-template  #noShow><td></td></ng-template>
+	<td *ngIf='transaction.credit > 0; else noShow' class="credit">{{ transaction.credit }}</td>
+	<ng-template  #noShow><td></td></ng-template>
+</ng-container>
