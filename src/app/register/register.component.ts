@@ -20,6 +20,10 @@ class Register {
 		}
 		return balance; 
 	}
+
+	sort(): void {
+		this.transactions.sort()
+	}
 }
 
 @Component({
@@ -37,6 +41,10 @@ export class RegisterComponent implements OnInit {
 		let credit = +(<HTMLInputElement>document.getElementById('credit')).value;
 
 		this.register.transactions.push(new Transaction(new Date(date), description, account, credit));
+	}
+
+	sort(): void {
+		this.register.transactions.sort()
 	}
 
 	constructor() { 

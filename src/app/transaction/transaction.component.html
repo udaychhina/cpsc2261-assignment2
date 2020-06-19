@@ -1,5 +1,5 @@
 <ng-container>
-	<td>{{ transaction.date }}</td>
+	<td>{{ transaction.date.toLocaleString() }}</td>
 	<td>{{ transaction.description }}</td>
 	<td>{{ transaction.account }}</td>
 	<td *ngIf='transaction.credit < 0; else noShow' class="debit">{{ transaction.credit * -1 }}</td>
